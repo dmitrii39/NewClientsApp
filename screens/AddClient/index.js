@@ -54,7 +54,7 @@ useEffect(()=> {console.log('didmount99999')}, [name, city])
       active: true,
     };
     onAddClient(client);
-    console.log(client)
+
   };
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
