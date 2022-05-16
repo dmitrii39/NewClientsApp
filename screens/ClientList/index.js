@@ -10,19 +10,22 @@ import {
 } from "react-native";
 import ClientItem from "./components/ClientItem";
 import LstBut from "./components/LstBut";
-import clientsData from "../../clients";
-
+// import clientsData from "../../clients";
+import { useSelector, useDispatch } from 'react-redux'
+import { onAddClientAction } from "../../reducers/clientsReducer";
 export default function ClientList({ navigation }) {
-  const [clients, setClients] = React.useState(clientsData);
 
   const addClient = (client) => {
-    clients.push(client);
-    setClients([...clients]);
+    dispatch(onAddClientAction(client))
+    // clients.push(client);
+    // setClients([...clients]);
     navigation.goBack()
-    // console.log("селёдка", client);
+    console.log("селёдка", client);
     // console.log('length', clients.length)
   };
-
+  const clients = useSelector(state => state);
+  const dispatch = useDispatch()
+  console.log('clientsState', clients)
   const renderItem = ({ item }) => (
     <ClientItem client={item} navigation={navigation} />
   );
