@@ -20,10 +20,10 @@ export default function ClientList({ navigation }) {
     // clients.push(client);
     // setClients([...clients]);
     navigation.goBack()
-    console.log("селёдка", client);
+    // console.log("селёдка", client);
     // console.log('length', clients.length)
   };
-  const clients = useSelector(state => state);
+  const clients = useSelector(state => state.clients);
   const dispatch = useDispatch()
   console.log('clientsState', clients)
   const renderItem = ({ item }) => (

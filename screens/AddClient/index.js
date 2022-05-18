@@ -14,12 +14,12 @@ import TopBar from './components/TopBar';
 import TxtIn from './components/TxtIn';
 import LstBut from './components/LstBut';
 export default function AddClient({ navigation, route }) {
-  const [newClients, setNewClients] = useState(clients);
-  const [phone, setPhone] = useState(null);
-  const [name, setName] = useState('');
-  const [img, setImg] = useState(null);
-  const [city, setSity] = useState(null);
-  const [bio, setBio] = useState(null);
+  // const [newClients, setNewClients] = useState(clients);
+  // const [phone, setPhone] = useState(null);
+  // const [name, setName] = useState('');
+  // const [img, setImg] = useState(null);
+  // const [city, setSity] = useState(null);
+  // const [bio, setBio] = useState(null);
 
 const onAddClient = route.params.addClient;
 

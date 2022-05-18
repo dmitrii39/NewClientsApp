@@ -4,10 +4,10 @@ import AddClient from "./screens/AddClient";
 import ClientList from "./screens/ClientList";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createStore } from "redux";
-import clientsReducer from "./reducers/clientsReducer";
+
+import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-const store = createStore(clientsReducer);
+import { store, persistor } from "./reducers/store";
 
 const Stack = createStackNavigator();
 function MyStack() {
@@ -25,9 +25,11 @@ function MyStack() {
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <MyStack />
-      </NavigationContainer>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <MyStack />
+        </NavigationContainer>
+      </PersistGate>
     </Provider>
   );
 }
