@@ -23,6 +23,10 @@ export default function ClientList({ navigation }) {
     // console.log("селёдка", client);
     // console.log('length', clients.length)
   };
+
+  const removeClient = (client) => {
+    console.log('REMOVE')
+  }
   const clients = useSelector(state => state.clients);
   const dispatch = useDispatch()
   console.log('clientsState', clients)
@@ -45,6 +49,11 @@ export default function ClientList({ navigation }) {
         <FlatList data={clients} renderItem={renderItem} />
         <LstBut
           text="Добавить нового"
+          // navigation={navigation}
+          onPress={() => navigation.navigate("AddClient", {addClient: addClient})}
+        />
+        <LstBut
+          text="DELETE"
           // navigation={navigation}
           onPress={() => navigation.navigate("AddClient", {addClient: addClient})}
         />

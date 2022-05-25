@@ -1,8 +1,14 @@
 export const ADD_CLIENT = "ADD_CLIENT";
-
+export const REMOVE_CLIENT = "REMOVE_CLIENT"
 export function onAddClientAction(client) {
   return {
     type: ADD_CLIENT,
+    payload: { client },
+  };
+}
+export function onREmoveClientAction(client) {
+  return {
+    type: REMOVE_CLIENT,
     payload: { client },
   };
 }

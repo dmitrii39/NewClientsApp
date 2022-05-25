@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   but: {
     justifyContent: "flex-end",
     flex: 1,
-    paddingBottom: 44,
+    paddingBottom: 14,
     paddingLeft: 24,
     paddingRight: 24,
     marginTop: 81,
